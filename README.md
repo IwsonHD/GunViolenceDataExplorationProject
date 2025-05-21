@@ -13,9 +13,8 @@ The dataset is available on Kaggle: [Gun Violence Data](https://www.kaggle.com/d
 - `data/` – downloaded dataset  
 - `notebooks/` – EDA and step-by-step documentation  
 - `scripts/` – helper functions (e.g., data loading, preprocessing)  
-- `reports/` – insights, visualizations, final documentation 
+- `documentation/` – insights, visualizations, final documentation 
 
 ## Documentation
  - --IN PROGRESS-- https://docs.google.com/document/d/1ghK2IcetsLB9zyqVjFHIt0K85ccZldr0c0B6W9gHtNc/edit?usp=sharing
- - 
 
