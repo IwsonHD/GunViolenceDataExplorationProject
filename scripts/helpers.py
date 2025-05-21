@@ -15,7 +15,7 @@ def extract_from_notation(df: pd.DataFrame, col_name: str, mode: Mode = Mode.num
         if pd.isna(cell):
             continue
 
-        for val in [val for val in cell.split("||")]:
+        for val in cell.split("||"):
             parsed = ''.join(val.split())
             if "::" in parsed:
                 number_str, attribute = parsed.split("::", 1)
