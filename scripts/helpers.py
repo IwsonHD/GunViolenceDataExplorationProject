@@ -26,6 +26,21 @@ def extract_from_notation(df: pd.DataFrame, col_name: str, mode: Mode = Mode.num
 
     return pd.DataFrame(output_dir.items(), columns=["attribute", "total"])
 
+def parse_participants(row):
+    try:
+        age_dict = {int(p.split("::")[0]): int(p.split("::")[1]) for p in str(row['participant_age']).split("||") if "::" in p}
+    except:
+        age_dict = {}
+    try:
+        type_dict = {int(p.split("::")[0]): p.split("::")[1] for p in str(row['participant_type']).split("||") if "::" in p}
+    except:
+        type_dict = {}
+
+    common_keys = set(age_dict.keys()) & set(type_dict.keys())
+    data = [{'age': age_dict[k], 'type': type_dict[k]} for k in common_keys]
+    return pd.DataFrame(data)
+
+
 
 if __name__ == "__main__":
 
